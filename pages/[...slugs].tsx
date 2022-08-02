@@ -9,7 +9,7 @@ type Props = {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
-      demo: '...slugs'
+      demo: 'static props are working (...slugs page)'
     },
     revalidate: 60 * 15,
   }
@@ -80,6 +80,7 @@ const Home: NextPage<Props> = (props) => {
   return (
     <div>
       Demo: {props.demo}
+      {!props?.demo && `Static props are not working! Returned ${JSON.stringify(props)} instead of {demo: 'static props are working (...slugs page)'}`}
       <br/>
       Current locale: {router.locale}
       <br/>
