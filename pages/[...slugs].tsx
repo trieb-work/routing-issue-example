@@ -77,10 +77,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const Home: NextPage<Props> = (props) => {
   const router = useRouter();
+  console.log("props", JSON.stringify(props, null, 2));
   return (
     <div>
       Demo: {props.demo}
-      {!props?.demo && `Static props are not working! Returned ${JSON.stringify(props)} instead of {demo: 'static props are working (...slugs page)'}`}
       <br/>
       Current locale: {router.locale}
       <br/>
